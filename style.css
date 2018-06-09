@@ -10,52 +10,88 @@ body {
     background-repeat: repeat;
     color: white;
     font-family: 'Pacifico', cursive;
-    font-size: 25px;
-    overflow: hidden;
+    font-size: 40px;
 }
 
 img {
     width: 250px;
     height: 250px;
-    align-self: center;
 }
 
 .transition {
-    transition: 2s;
+    transition: 1.5s;
 }
 
 .container {    
     height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     padding: 100px;
+    overflow: hidden;
 }
 
 .children {
-    /* border: 5px solid blue; */
+    border: 5px solid blue;
     height: 100%;
     width: 100%;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    position: relative;
+    
 }
 
 p {
-    /* border: 10px solid red; */
-    font-size: 55px;
+    border: 10px solid red;
+    margin: 80px 0;
 }
 
+
+.desktop, .ipadPro, .ipad, .phone {
+    position: absolute;
+}
+
+.ipadPro, .ipad, .phone {
+    opacity: 0;
+}
+
+.ipadPro p, .ipadPro .moon {
+    transform: translateY(-1500px);
+}
 
 
 
 @media screen and (max-width: 800px) {
+    /* Desktop */
     .rocket {
         transform: translateY(-1500px);
     }
 
-    .earth, p {
-        opacity: 0;
+    .earth, .desktop {
+        opacity: 0;     
+    }
+    /* Desktop */
+
+    .ipadPro {
+        opacity: 1;
+    }
+
+    .ipadPro p {
+        font-size: 30px;
+    }
+
+    .ipadPro img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ipadPro p, .ipadPro .moon {
+        transform: translateY(0);
+    }
+
+    .ipadPro .astronaut {
+        transform: rotate(720deg) translateY(100px);
     }
 }
 
